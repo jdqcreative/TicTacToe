@@ -8,4 +8,5 @@ public:
 
 	int GetInput();
 	bool GetPlayer();
+	void ChangePlayer();
 };

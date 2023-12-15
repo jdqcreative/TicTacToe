@@ -6,7 +6,17 @@ void Game::Run()
 	{
 		int turn = player.GetInput();
 
-		board.Update(turn, player.GetPlayer());
-		board.printBoard();
+		if (board.EvaluateTurn(turn))
+		{
+			player.ChangePlayer();
+
+			board.Update(turn, player.GetPlayer());
+			board.printBoard();
+			board.CheckForWinner();
+		}
+		else
+		{
+			std::cout << "Space is taken / invalid input. Try Again." << std::endl;
+		}
 	}
 }
