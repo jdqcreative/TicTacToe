@@ -5,6 +5,7 @@
 class TicTacToeBoard {
 
 	std::string m_Spaces[9] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
+	int m_TurnsTaken = 0;
 
 public:
 

@@ -13,6 +13,8 @@ void TicTacToeBoard::printBoard()
 void TicTacToeBoard::Update(int turn, bool player)
 { 
 
+	m_TurnsTaken++;
+
 	if (player)
 	{
 		m_Spaces[--turn] = "X";
@@ -93,6 +95,14 @@ void TicTacToeBoard::CheckForWinner()
 
 bool TicTacToeBoard::EvaluateTurn(int t)
 {
+	if (m_TurnsTaken >= 9)
+	{
+		std::cout << "All spaces taken. Resetting board.\n";
+		ResetBoard();
+		m_TurnsTaken = 0;
+		return false;
+	}
+
 	if (m_Spaces[--t] != " ")
 	{
 		return false;
