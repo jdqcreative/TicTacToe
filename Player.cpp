@@ -9,10 +9,10 @@ int Player::GetInput()
 
 	while (1)
 	{
-		if (m_PlayerX) { std::cout << "X turn, "; }
-		else { std::cout << "O turn, "; }
+		if (!m_PlayerX) { std::cout << "\n X turn, "; }
+		else { std::cout << "\n O turn, "; }
 
-		std::cout << "Enter a number (1-9) or 0 to quit:\n";
+		std::cout << " Enter a number (1-9) or 0 to quit:\n \n";
 
 		std::cin >> input;
 

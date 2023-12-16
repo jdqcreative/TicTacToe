@@ -3,6 +3,8 @@
 #include "TicTacToeBoard.h"
 #include "Player.h"
 
+#include <stdlib.h>
+
 class Game {
 
 	TicTacToeBoard board;

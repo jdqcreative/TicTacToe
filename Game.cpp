@@ -6,6 +6,8 @@ void Game::Run()
 	{
 		int turn = player.GetInput();
 
+		system("CLS");
+
 		if (board.EvaluateTurn(turn))
 		{
 			player.ChangePlayer();
@@ -16,7 +18,13 @@ void Game::Run()
 		}
 		else
 		{
-			std::cout << "Space is taken / invalid input. Try Again." << std::endl;
+			std::cout << "Space is taken / invalid input. Try Again.\n" << std::endl;
+			board.printBoard();
 		}
 	}
+}
+
+void Game::Reset()
+{
+
 }
