@@ -10,9 +10,13 @@ class Game {
 	TicTacToeBoard board;
 	Player player;
 	bool gameOver = false;
+	std::string m_Message;
 	
 public:
 
 	void Run();
 	void Reset();
+
+	void PrintMessage();
+	void ClearMessage();
 };

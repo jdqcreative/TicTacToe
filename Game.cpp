@@ -15,13 +15,31 @@ void Game::Run()
 			board.Update(turn, player.GetPlayer());
 			board.printBoard();
 			board.CheckForWinner();
+
+			board.PrintMessage();
+			player.PrintMessage();
 		}
 		else
 		{
-			std::cout << "Space is taken / invalid input. Try Again.\n" << std::endl;
 			board.printBoard();
+
+			board.PrintMessage();
+			player.PrintMessage();
 		}
+
+		board.ClearMessage();
+		player.ClearMessage();
 	}
+}
+
+void Game::PrintMessage()
+{
+	std::cout << m_Message << std::endl;
+}
+
+void Game::ClearMessage()
+{
+	m_Message = "";
 }
 
 void Game::Reset()

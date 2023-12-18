@@ -9,8 +9,8 @@ int Player::GetInput()
 
 	while (1)
 	{
-		if (!m_PlayerX) { std::cout << "\n X turn, "; }
-		else { std::cout << "\n O turn, "; }
+		if (!m_PlayerX) { std::cout << "X turn, "; }
+		else { std::cout << "O turn, "; }
 
 		std::cout << " Enter a number (1-9) or 0 to quit:\n \n";
 
@@ -38,14 +38,11 @@ int Player::GetInput()
 			case 9:
 				break;
 			default:
-				input = 10;
 
-				std::cout << "Please enter a valid input.\n";
-				
 				std::cin.clear();
 				
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				continue;
+				return input = 10;
 		}
 		break;
 	}
@@ -60,4 +57,14 @@ bool Player::GetPlayer()
 void Player::ChangePlayer()
 {
 	m_PlayerX = !m_PlayerX;
+}
+
+void Player::PrintMessage()
+{
+	std::cout << m_Message << std::endl;
+}
+
+void Player::ClearMessage()
+{
+	m_Message = "";
 }

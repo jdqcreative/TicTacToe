@@ -6,6 +6,7 @@ class TicTacToeBoard {
 
 	std::string m_Spaces[9] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
 	int m_TurnsTaken = 0;
+	std::string m_Message;
 
 public:
 
@@ -17,4 +18,7 @@ public:
 	bool EvaluateTurn(int t);
 
 	void ResetBoard();
+
+	void PrintMessage();
+	void ClearMessage();
 };
